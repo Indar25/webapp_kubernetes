@@ -36,7 +36,10 @@ jobs:
       run: |
         mkdir -p ~/.kube
         echo "${{ secrets.VULTR_KUBECONFIG }}" > ~/.kube/config
-
+        
+    - name: Create Namespace
+      run: kubectl create namespace backend || echo "Namespace already exists"
+    
     - name: Replace image tag in deployment.yaml
       run: |
         sed -i "s|image:.*|image: $IMAGE_NAME:$IMAGE_TAG|" k8s/deployment.yml
