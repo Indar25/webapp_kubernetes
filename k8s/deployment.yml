@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: practiceapi-deployment
+  namespace: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: practiceapi
+  template:
+    metadata:
+      labels:
+        app: practiceapi
+    spec:
+      containers:
+        - name: practiceapi
+          image: indar25/practiceapi # ← this line will be dynamically replaced
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DEPARTMENT_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: practice-backend-configmap
+                  key: DEPARTMENT_NAME
+            - name: COMPANY_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: practice-backend-configmap
+                  key: COMPANY_NAME
+            - name: LOCATION
+              valueFrom:
+                configMapKeyRef:
+                  name: practice-backend-configmap
+                  key: LOCATION

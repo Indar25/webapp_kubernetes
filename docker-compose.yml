@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   practice.api:
     image: ${DOCKER_REGISTRY-}practiceapi
@@ -6,9 +5,8 @@ services:
       context: .
       dockerfile: WebApp-Kubernetes/Dockerfile
     environment:
-      - DEPARTMENT_NAME=Engineering
-      - COMPANY_NAME=Google
-      - LOCATION=Pune
+      - DEPARTMENT_NAME
+      - COMPANY_NAME
+      - LOCATION
     ports:
       - "8080:8080"
-

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: practice-backend-configmap
+  namespace: backend
+data:
+  DEPARTMENT_NAME: "Engineering"
+  COMPANY_NAME: "Google"
+  LOCATION: "Pune"

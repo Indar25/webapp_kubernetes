@@ -1,3 +1,5 @@
+using practice.Application;
+
 namespace WebApp_Kubernetes
 {
     public class Program
@@ -8,7 +10,8 @@ namespace WebApp_Kubernetes
 
             // Add services to the container.
             builder.Services.AddAuthorization();
-            builder.Services.AddControllers(); 
+            builder.Services.AddControllers();
+            builder.Services.AddApplication();
 
             var app = builder.Build();
 
@@ -19,7 +22,7 @@ namespace WebApp_Kubernetes
             app.UseAuthorization();
 
             app.MapControllers();
-            app.Run("http://0.0.0.0:8080");
+            app.Run();
         }
     }
 }

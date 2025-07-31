@@ -1,4 +1,4 @@
-﻿namespace WebApp_Kubernetes.Model;
+﻿namespace practice.Application.Dtos;
 public class Employee
 {
     public Guid Id { get; set; }
