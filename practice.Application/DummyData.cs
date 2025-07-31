@@ -13,7 +13,7 @@ public class DummyData
                     Name = "HR",
                     Employess = new List<Employee>
                     {
-                        new Employee { Id = Guid.NewGuid(), Name = "Alice", Salary = 50000 },
+                        new Employee { Id = Guid.NewGuid(), Name = "Alice", Salary = 57000 },
                         new Employee { Id = Guid.NewGuid(), Name = "Bob", Salary = 52000 },
                         new Employee { Id = Guid.NewGuid(), Name = "Charlie", Salary = 48000 },
                         new Employee { Id = Guid.NewGuid(), Name = "Diana", Salary = 51000 },
