@@ -39,13 +39,14 @@ jobs:
 
     - name: Replace image tag in deployment.yaml
       run: |
-        sed -i "s|image:.*|image: $IMAGE_NAME:$IMAGE_TAG|" k8s/deployment.yaml
+        sed -i "s|image:.*|image: $IMAGE_NAME:$IMAGE_TAG|" k8s/deployment.yml
 
     - name: Apply ConfigMap
-      run: kubectl apply -f k8s/configmap.yaml
+      run: kubectl apply -f k8s/configmap.yml
 
     - name: Apply Deployment
-      run: kubectl apply -f k8s/deployment.yaml
+      run: kubectl apply -f k8s/deployment.yml
 
     - name: Apply Service
-      run: kubectl apply -f k8s/service.yaml
+      run: kubectl apply -f k8s/service.yml
+
