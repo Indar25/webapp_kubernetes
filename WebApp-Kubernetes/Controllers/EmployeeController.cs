@@ -43,9 +43,9 @@ namespace WebApp_Kubernetes.Controllers
         }
 
         [HttpGet("TestAPI")]
-        public IActionResult Test(string department)
+        public IActionResult Test()
         {
-            return Ok("Hello from the API");
+            return Ok("Hello from the API-Rollback");
         }
     }
 
