@@ -41,6 +41,12 @@ namespace WebApp_Kubernetes.Controllers
 
             return Ok(employees);
         }
+
+        [HttpGet("TestAPI")]
+        public IActionResult Test(string department)
+        {
+            return Ok("Hello from the API");
+        }
     }
 
 
